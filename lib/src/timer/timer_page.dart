@@ -14,7 +14,9 @@ class TimerPage extends StatelessWidget {
         child: TimerWidget(),
       ),
       bottomChildColor: Colors.red,
-      bottomChild: Center(
+      bottomChild: Container(
+        alignment: Alignment.bottomCenter,
+        padding: EdgeInsets.only(bottom: 50),
         child: ScopedModelDescendant<HomeViewModel>(
           rebuildOnChange: false,
           builder: (context, _, viewModel) {

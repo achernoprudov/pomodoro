@@ -18,7 +18,9 @@ class PickerPage extends StatelessWidget {
           ScaleWidget(
             itemsCount: 30,
           ),
-          Center(
+          Container(
+            alignment: Alignment.bottomCenter,
+            padding: EdgeInsets.only(bottom: 50),
             child: StartTimerButton(),
           ),
         ],

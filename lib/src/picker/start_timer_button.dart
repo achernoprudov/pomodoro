@@ -12,12 +12,14 @@ class StartTimerButton extends StatelessWidget {
             curve: Curves.easeIn,
             duration: Duration(milliseconds: 100),
             opacity: viewModel.timerValue == 0 ? 0 : 1,
-            child: TimerButton(
+            child: IgnorePointer(
+              ignoring: viewModel.timerValue == 0,
+                child: TimerButton(
               title: 'Start timer',
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
               onPressed: viewModel.startTimer,
-            ));
+            )));
       },
     );
   }
