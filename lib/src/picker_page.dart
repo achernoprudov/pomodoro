@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:pomodoro/src/interval_widget.dart';
 
 class PickerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
+    var theme = Theme.of(context);
+    var textTheme = theme.textTheme;
     return Stack(
       children: <Widget>[
         Column(
@@ -24,17 +26,21 @@ class PickerPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: ListView.builder(
-                itemCount: 40,
-                itemExtent: 40,
+              child: PageView.builder(
+                itemCount: 30,
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return IntervalWidget(interval: index,);
-                  // return Container(
-                  //   height: 40,
-                  //   child: Text('$index min'),
-                  // );
+                pageSnapping: false,
+                physics: PageScrollPhysics(), // TODO custom page scroll physics
+                onPageChanged: (index) {
+                  if (theme.platform == TargetPlatform.iOS) {
+                    HapticFeedback.selectionClick();
+                  }
+                  
                 },
+                controller: PageController(viewportFraction: 0.1),
+                itemBuilder: (_, index) => IntervalWidget(
+                      interval: index,
+                    ),
               ),
             ),
           ],

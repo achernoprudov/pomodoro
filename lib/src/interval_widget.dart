@@ -8,7 +8,7 @@ class IntervalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 20,
+      width: 40,
       child: Stack(
         children: <Widget>[
           Row(
@@ -16,25 +16,25 @@ class IntervalWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
-                color: Colors.black,
-                height: 5,
+                color: Colors.white,
+                height: 8,
                 width: 1,
               ),
               Container(
                 color: Colors.black,
-                height: 2,
-                width: 2,
+                height: 4,
+                width: 1,
               ),
               Container(
                 color: Colors.black,
-                height: 5,
+                height: 6,
                 width: 1,
               )
             ],
           ),
           Container(
             alignment: Alignment.topCenter,
-            padding: EdgeInsets.only(top: 5),
+            padding: EdgeInsets.only(top: 10),
             child: Text('$interval'),
           )
         ],
