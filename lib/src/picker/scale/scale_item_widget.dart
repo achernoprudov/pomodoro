@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class IntervalWidget extends StatelessWidget {
+class ScaleItemWidget extends StatelessWidget {
   final int interval;
 
-  const IntervalWidget({Key key, this.interval}) : super(key: key);
+  const ScaleItemWidget({Key key, this.interval}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

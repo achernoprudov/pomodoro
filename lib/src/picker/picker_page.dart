@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
-import 'package:pomodoro/src/interval_widget.dart';
+import 'package:pomodoro/src/picker/scale/scale_widget.dart';
 
 class PickerPage extends StatelessWidget {
   @override
@@ -26,21 +25,9 @@ class PickerPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: PageView.builder(
-                itemCount: 30,
-                scrollDirection: Axis.horizontal,
-                pageSnapping: false,
-                physics: PageScrollPhysics(), // TODO custom page scroll physics
-                onPageChanged: (index) {
-                  if (theme.platform == TargetPlatform.iOS) {
-                    HapticFeedback.selectionClick();
-                  }
-                  
-                },
-                controller: PageController(viewportFraction: 0.1),
-                itemBuilder: (_, index) => IntervalWidget(
-                      interval: index,
-                    ),
+              child: ScaleWidget(
+                itemsCount: 30,
+                onChangeSelection: (value) {},
               ),
             ),
           ],
@@ -53,6 +40,21 @@ class PickerPage extends StatelessWidget {
             style: textTheme.display3.copyWith(color: Colors.white),
           ),
         ),
+        Container(
+          alignment: Alignment.bottomCenter,
+          padding: EdgeInsets.only(bottom: 50),
+          child: RaisedButton(
+            onPressed: () {},
+            color: Colors.red,
+            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+            child: Text(
+              'Start timer',
+              style: textTheme.headline.copyWith(color: Colors.white),
+            ),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          ),
+        )
       ],
     );
   }
