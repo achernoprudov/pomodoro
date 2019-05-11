@@ -9,8 +9,8 @@ class StartTimerButton extends StatelessWidget {
     return ScopedModelDescendant<HomeViewModel>(
       builder: (context, _, viewModel) {
         return AnimatedOpacity(
-            curve: ElasticInOutCurve(),
-            duration: Duration(microseconds: 400),
+            curve: Curves.easeIn,
+            duration: Duration(milliseconds: 100),
             opacity: viewModel.timerValue == 0 ? 0 : 1,
             child: TimerButton(
               title: 'Start timer',
