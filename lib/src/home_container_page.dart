@@ -7,12 +7,14 @@ import 'package:pomodoro/src/timer/timer_page.dart';
 class HomeContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var viewModel = HomeViewModel();
     return Material(
         child: ScopedModel(
-      model: HomeViewModel(),
+      model: viewModel,
       child: PageView.builder(
+        controller: viewModel.pageController,
         scrollDirection: Axis.vertical,
-        physics: NeverScrollableScrollPhysics(),
+        // physics: NeverScrollableScrollPhysics(),
         itemCount: 2,
         itemBuilder: (context, index) {
           switch (index) {
