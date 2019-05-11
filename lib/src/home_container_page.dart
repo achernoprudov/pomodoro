@@ -14,7 +14,7 @@ class HomeContainerPage extends StatelessWidget {
       child: PageView.builder(
         controller: viewModel.pageController,
         scrollDirection: Axis.vertical,
-        // physics: NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         itemCount: 2,
         itemBuilder: (context, index) {
           switch (index) {
