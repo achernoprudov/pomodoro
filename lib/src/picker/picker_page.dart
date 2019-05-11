@@ -28,10 +28,16 @@ class PickerPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: ScaleWidget(
-                itemsCount: 30,
-              ),
-            ),
+                child: Stack(
+              children: <Widget>[
+                Center(
+                  child: StartTimerButton(),
+                ),
+                ScaleWidget(
+                  itemsCount: 30,
+                ),
+              ],
+            )),
           ],
         ),
         Container(
@@ -42,10 +48,6 @@ class PickerPage extends StatelessWidget {
             style: textTheme.display3.copyWith(color: Colors.white),
           ),
         ),
-        Container(
-            alignment: Alignment.bottomCenter,
-            padding: EdgeInsets.only(bottom: 50),
-            child: StartTimerButton())
       ],
     );
   }
