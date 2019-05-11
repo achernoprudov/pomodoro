@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pomodoro/src/interval_widget.dart';
 
 class PickerPage extends StatelessWidget {
   @override
@@ -28,10 +29,11 @@ class PickerPage extends StatelessWidget {
                 itemExtent: 40,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Container(
-                    height: 40,
-                    child: Text('$index min'),
-                  );
+                  return IntervalWidget(interval: index,);
+                  // return Container(
+                  //   height: 40,
+                  //   child: Text('$index min'),
+                  // );
                 },
               ),
             ),
