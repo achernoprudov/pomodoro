@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 class PickerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
     return Stack(
       children: <Widget>[
         Column(
@@ -29,13 +30,21 @@ class PickerPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Container(
                     height: 40,
-                    child: Text('index'),
+                    child: Text('$index min'),
                   );
                 },
               ),
             ),
           ],
-        )
+        ),
+        Container(
+          alignment: Alignment.topCenter,
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 60),
+          child: Text(
+            'Pomodoro',
+            style: textTheme.display3.copyWith(color: Colors.white),
+          ),
+        ),
       ],
     );
   }

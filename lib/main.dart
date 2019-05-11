@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
       title: 'Pomodoro',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Fjalla',
       ),
       home: HomeContainerPage(),
     );
