@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pomodoro/src/home_view_model.dart';
+import 'package:pomodoro/src/picker/start_timer_button.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:pomodoro/src/picker/scale/scale_widget.dart';
 
 class PickerPage extends StatelessWidget {
@@ -27,7 +30,6 @@ class PickerPage extends StatelessWidget {
             Expanded(
               child: ScaleWidget(
                 itemsCount: 30,
-                onChangeSelection: (value) {},
               ),
             ),
           ],
@@ -41,20 +43,9 @@ class PickerPage extends StatelessWidget {
           ),
         ),
         Container(
-          alignment: Alignment.bottomCenter,
-          padding: EdgeInsets.only(bottom: 50),
-          child: RaisedButton(
-            onPressed: () {},
-            color: Colors.red,
-            padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),
-            child: Text(
-              'Start timer',
-              style: textTheme.headline.copyWith(color: Colors.white),
-            ),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-          ),
-        )
+            alignment: Alignment.bottomCenter,
+            padding: EdgeInsets.only(bottom: 50),
+            child: StartTimerButton())
       ],
     );
   }
