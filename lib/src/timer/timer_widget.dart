@@ -6,17 +6,21 @@ class TimerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
+    var textStyle = textTheme.display4.copyWith(color: Colors.black);
     return ScopedModelDescendant<HomeViewModel>(
       builder: (context, _, viewModel) {
         return StreamBuilder(
           stream: viewModel.secondsStream,
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
-              return Text('loading');
+              return Text(
+                '00:00',
+                style: textStyle,
+              );
             }
             return Text(
               '${snapshot.data}',
-              style: textTheme.display4.copyWith(color: Colors.black),
+              style: textStyle,
             );
           },
         );

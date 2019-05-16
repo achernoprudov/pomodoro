@@ -8,7 +8,6 @@ import 'package:pomodoro/src/widgets/split_widget.dart';
 class PickerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return SplitWidget(
       topChildColor: Colors.red,
       topChild: PickerPageHeader(),
